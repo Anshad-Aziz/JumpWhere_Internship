@@ -1,0 +1,100 @@
+1. Write a Python program to calculate the length of a string.
+def length(str):
+    return len(str)
+str=input("Enter the String")
+print(length(str))
+
+2. Write a Python program to count the number of characters (character frequency) in a string. 
+Sample String : google.com'
+Expected Result : {'o': 3, 'g': 2, '.': 1, 'e': 1, 'l': 1, 'm': 1, 'c': 1}
+
+def count_character(str):
+   freq_count={}
+   for char in str:
+        freq_count[char]=freq_count.get(char,0)+1
+   return freq_count
+str=input("Enter the String:  ")
+print(count_character(str))
+
+3. Write a Python program to get a string made of the first 2 and the last 2 chars from a given a string. If the string length is less than 2, return instead of the empty string. 
+Sample String : 'thisisniceone'
+Expected Result : 'thne”'
+Sample String : 'ab'
+Expected Result : 'abab'
+Sample String : 'f'
+Expected Result : Empty String
+
+def first_last(str):
+    if len(str)<2:
+        return "Empty String"
+    return str[:2]+str[-2:]
+
+str=input("Enter the String ")
+print(first_last(str))
+
+4. Write a Python program to get a string from a given string where all occurrences of its first char have been changed to '$', except the first char itself.
+Sample String : 'restart'
+Expected Result : 'resta$t'
+
+def first_replace(str):
+    if not str:
+        return ""
+    first_character=str[0]
+    modified=first_character+str[1:].replace(first_character,'$')
+    return modified
+
+str=input("Enter the String ")
+print(first_replace(str))
+
+6. Write a Python program to add 'ing' at the end of a given string (length should be at least 3). If the given string already ends with 'ing' then add 'ly' instead. If the string length of the given string is less than 3, leave it unchanged.
+Sample String : 'abc'
+Expected Result : 'abcing' 
+Sample String : 'string'
+Expected Result : 'stringly'
+
+def swap_two(str1,str2):
+    if len(str1)<2 or len(str2)<2:
+        return "String length less 2"
+    swap1=str2[:2]+str1[2:]
+    swap2=str1[:2]+str2[2:]
+    return swap1+" "+swap2
+
+str1=input("Enter the String ")
+str2=input("Enter the String ")
+
+print(swap_two(str1,str2))
+
+8. Write a Python function that takes a list of words and returns the length of the longest one. 
+def longest(str):
+    if not str:
+        return "Not a String"
+    return max(len(string) for string in str)    
+
+string=input("Enter the String ").split()
+
+print(longest(string))
+
+9. Write a Python program to remove the nth index character from a nonempty string.
+
+def remove_nth(index,str):
+    if index<0 or index>len(str):
+        return "Enter the correct index"
+    return str[:index]+str[index+1:]
+
+str=input('Enter the String ')
+index=int(input("Enter the Index "))
+
+print(remove_nth(index,str))
+
+10. Write a Python program that accepts a comma separated sequence of words as input and prints the unique words in sorted form (alphanumerically). 
+Sample Words : red, white, black, red, green, black
+Expected Result : black, green, red, white
+
+def sort(str):
+    word=str.split(',')
+    sort=sorted(set(words.strip() for words in word))
+    return ' '.join(sort)
+
+str=input("Enter the String ")
+print(sort(str))
+
