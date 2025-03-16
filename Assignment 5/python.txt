@@ -98,3 +98,18 @@ def sort(str):
 str=input("Enter the String ")
 print(sort(str))
 
+11. Write a Python function to reverses a string if it's length is a multiple of 4. 
+def reverse(str):
+    return str[::-1] if len(str)%4==0 else str
+    
+str=input("Enter the String ")
+print(reverse(str))
+
+12. Write a Python function to convert a given string to all uppercase if it contains at least 2 uppercase characters in the first 4 characters.
+
+def uppercase(str):
+    upper=sum(1 for char in str[:4] if char.isupper())
+    return str.upper() if upper >=2 else str
+    
+str=input("Enter the String ")
+print(uppercase(str))
