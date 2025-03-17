@@ -113,3 +113,58 @@ def uppercase(str):
     
 str=input("Enter the String ")
 print(uppercase(str))
+
+14. Write a Python program to print the following floating numbers upto 2 decimal places.
+3.1415926
+num=float(input("Enter the number"))
+
+print(f"{num:.2f}")
+
+16. Write a Python program to print the index of the character in a string
+def printindex(str):
+    for index,char in enumerate(str):
+        print(f"Character {char} at index {index}")
+
+str=input("Enter the String")
+print(printindex(str))
+
+17. Write a Python program to convert a string in a list.
+str=input("enter the String")
+
+lists=list(str)
+
+print(lists)
+
+18. Write a Python program to swap comma and dot in a string.
+Sample string: "32.054,23"
+Expected Output: "32,054.23"
+def swap(num):
+    return num.replace('.','temp').replace(',','.').replace('temp',',')
+    
+num=input("Enter the number")
+
+print(swap(num))
+19. Write a Python program to find smallest and largest word in a given string.
+def count_word(str):
+    word=str.split()
+    smallest=min(word,key=len)
+    largest=max(word,key=len)
+    return smallest,largest
+
+str=input("Enter the String")
+smallest,largest=count_word(str)
+print('smallest',smallest)
+print('largest',largest)
+
+20. Write a Python program to remove all consecutive duplicates of a given string.
+def different(str):
+    result=str[0]
+    
+    for i in range(1,len(str)):
+        if str[i]!=str[i-1]:
+            result+=str[i]
+    return result
+        
+str=input("Enter the string: ") 
+
+print(different(str))
