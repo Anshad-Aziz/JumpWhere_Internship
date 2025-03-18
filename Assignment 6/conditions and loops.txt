@@ -51,4 +51,122 @@ z=int(input("Enter the side"))
 
 triangle(x,y,z)      
 
+6. Write a Python program to construct the following pattern, using a nested loop number.
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+999999999
+for i in range(1,10):
+    print(str(i)*i)
+7. Write a Python program that counts the number of elements within a list that are greater than 30.
+def count(lst):
+    count=sum(1 for num in lst if num>30)
+    return count
 
+lst=list(map(int, input("Enter numbers separated by spaces: ").split()))
+
+print(count(lst))
+8. Take values of length and breadth of a rectangle from user and check if it is square or not.
+length=float(input("Enter the length"))
+breath=float(input("Enter the breath"))
+
+if length==breath:
+    print("It is a Square")
+else:
+    print("Not a square")
+
+9. A shop will give discount of 10% if the cost of purchased quantity is more than 1000.
+Ask user for quantity
+Suppose, one unit will cost 100.
+Judge and print total cost for user.
+quantity =int(input("Enter the quantity"))
+
+unit=100
+
+cost=quantity*unit
+
+if cost>1000:
+    discount=cost*0.10
+    cost-=discount
+
+print(cost) 
+
+10. A company decided to give bonus of 5% to employee if his/her year of service is more than 5 years.
+Ask user for their salary and year of service and print the net bonus amount.
+salary=int(input("Enter the salary"))
+year=int(input("Enter the year"))
+
+if year>5:
+    bonus=salary*0.05
+    print('Bonus',bonus)
+else:
+    print("No Bonus")
+
+11. A school has following rules for grading system:
+a. Below 25 - F
+b. 25 to 45 - E
+c. 45 to 50 - D
+d. 50 to 60 - C
+e. 60 to 80 - B
+f. Above 80 - A
+Ask user to enter marks and print the corresponding grade.
+
+marks=int(input("Enter the marks"))
+
+if marks<25:
+    grade='F'
+elif 25<=marks <45:
+    grade="E"
+elif 45<= marks <60:
+    grade="D"
+elif 60<= marks<75:
+    grade="C"
+elif 75<= marks <85:
+    grade='B'
+else:
+    grade='A'
+
+print(grade) 
+
+12. A student will not be allowed to sit in exam if his/her attendence is less than 75%.
+Take following input from user
+Number of classes held
+Number of classes attended.
+And print
+percentage of class attended
+Is student is allowed to sit in exam or not.
+
+class_held=int(input("Enter the class held "))
+attended=int(input("Enter the attended class "))
+
+percentage=(attended/class_held)*100
+
+if percentage>75:
+    print("Allowed for Exam")
+else:
+    print('Not allowed')
+
+13. Take 10 integers from keyboard using loop and print their average value on the screen.
+
+total=0
+
+for i in range(1,10):
+    num=int(input(f"Enter the number {i} : "))
+    total+=num
+
+avg=total/10
+
+print(avg)
+
+14. Print multiplication table of 24, 50 and 29 using loop.
+number=[24,50,29]
+
+for num in number:
+    print(f"Multiplication {num}")
+    for i in range(1,11):
+        print(f"{num} X {i}={ num*i}")
