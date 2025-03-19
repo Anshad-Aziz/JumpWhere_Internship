@@ -170,3 +170,94 @@ for num in number:
     print(f"Multiplication {num}")
     for i in range(1,11):
         print(f"{num} X {i}={ num*i}")
+
+16. Take inputs from user to make a list. Again take one input from user and search it in the list and delete that element, if found. Iterate over list using for loop.
+numbers=list(map(int,input("Enter the number").split()))
+
+delete=int(input("Enter the number delete"))
+
+if delete in numbers:
+    numbers.remove(delete)
+else:
+    print("Not found")
+
+for num in numbers:
+    print(num)
+
+17. Using range(1,101), make three list, 
+one containing all even numbers
+one containing all odd numbers 
+One containing only prime numbers..
+def isprime(n):
+    if n<2:
+        return False
+    for i in range(2,int(n**0.5)+1): 
+        if n%i==0:
+            return False
+    return True
+        
+even_number=[num for num in range(1,1001) if num%2==0]
+odd_number=[num for num in range(1,1001) if num%2==1]
+prime_number=[num for num in range(1,1001) if isprime(num)]
+
+print(f"Even Number{even_number}")
+print(f"Odd Number{odd_number}")
+print(f"Prime Number{prime_number}")
+
+18. From the two list obtained in previous question, make new lists, containing only numbers which are divisible by 4, 6, 8, 10, 3, 5, 7 and 9 in separate lists.
+def filter_number(number,div):
+    return [num for num in number if num%div==0]
+    
+even=[num for num in range(1,101) if num%2==0]
+odd=[num for num in range(1,101) if num%2==1]
+
+div_by_4=filter_number(even,4)
+div_by_6=filter_number(even,6)
+div_by_8=filter_number(even,8)
+div_by_10=filter_number(even,10)
+
+
+div_by_3=filter_number(odd,3)
+div_by_5=filter_number(odd,5)
+div_by_7=filter_number(odd,7)
+div_by_9=filter_number(odd,9)
+
+
+print(div_by_4)
+print(div_by_6)
+print(div_by_6)
+print(div_by_10)
+
+print(div_by_3)
+print(div_by_5)
+print(div_by_7)
+print(div_by_9)
+
+19. From a list containing ints, strings and floats, make three lists to store them separately
+
+
+mixed_list = [12, "hello", 45.6, "world", 78, 23.9, "python", 100, 3.14, 50]
+
+int_list = []
+str_list = []
+float_list = []
+
+for item in mixed_list:
+    if isinstance(item, int):  
+        int_list.append(item)
+    elif isinstance(item, float):
+        float_list.append(item)
+    elif isinstance(item, str):
+        str_list.append(item)
+
+print("Integers:", int_list)
+print("Floats:", float_list)
+print("Strings:", str_list)
+20.You are given with a list of integer elements. Make a new list which will store square of elements of previous list.
+number=[2,4,16,45,64,49]
+
+squares=[num**2 for num in number]
+
+print(number)
+print(squares)
+
