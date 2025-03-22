@@ -101,14 +101,64 @@ print(min_dict)
 
 13. Write a Python program to remove duplicates from Dictionary.
 my_dict = {'a': 25, 'b': 50, 'c': 10, 'd': 75, 'e': 25}
-
 unique={}
-
 for key,value in my_dict.items():
     if value  not in unique.values():
         unique[key]=value
+print(unique)
 
-print(unique) 
+14. Write a Python program to check a dictionary is empty or not. 
+empty={}
+data={1:'a',2:'b',3:'c'}
+def is_empty(data):
+    return not bool (data)
+print(is_empty(data))
+print(is_empty(empty))
 
+15. Write a Python program to combine two dictionary adding values for common keys.
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+Sample output: Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300})
 
+from collections import Counter
+d1 = {'a': 100, 'b': 200, 'c': 300}
+d2 = {'a': 300, 'b': 200, 'd': 400}
+merge=Counter(d1)+Counter(d2)
+print(merge)
 
+16. Write a Python program to find the highest 3 values in a dictionary.
+d = {'a': 100, 'b': 200, 'c': 300, 'd': 400, 'e': 50}
+top_3=sorted(d.values(),reverse=True)[:3]
+print(top_3)
+
+17. Write a Python program to match key values in two dictionaries.
+Sample dictionary: {'key1': 1, 'key2': 3, 'key3': 2}, {'key1': 1, 'key2': 2}
+Expected output: key1: 1 is present in both x and y
+dict1 = {'key1': 1, 'key2': 3, 'key3': 2}
+dict2 = {'key1': 1, 'key2': 2}
+
+for key in dict1:
+    if key in dict2 and dict1[key]==dict2[key]:
+        print(f"{dict1[key]}")
+
+18. Write a Python program to check if all dictionaries in a list are empty or not.
+Sample list : [{},{},{}]
+Return value : True
+Sample list : [{1,2},{},{}]
+Return value : False
+list1 = [{}, {}, {}]
+list2 = [{1, 2}, {}, {}]
+def empty_dict(data):
+    return all(not d for d in data)
+print(empty_dict(list1))
+print(empty_dict(list2))
+
+20. Write a Python program to extend a list without append.
+Sample data: [10, 20, 30]
+[40, 50, 60]
+Expected output : [40, 50, 60, 10, 20, 30]
+list1=[1,2,3,4,5]
+list2=[6,7,8,9,10]
+
+list3=list1+list2
+print(list3)
