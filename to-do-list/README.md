@@ -19,7 +19,3 @@ cd to-do-list
 python manage.py runserver
 ```
 
-Open `http://127.0.0.1:8000` in your browser.
-
-## Screenshots
-![Screenshot (16)](https://github.com/user-attachments/assets/7a5daa8c-8310-4dfc-a0e4-c750f27735f0)
